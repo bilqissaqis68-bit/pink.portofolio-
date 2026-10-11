@@ -1,258 +1,333 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilqis Aulia | My Pink Portfolio</title>
+  <title>My Pink Portfolio | Bilqis Aulia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #fff7fb;
-      color: #68465b;
-      line-height: 1.7;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fff5f9, #ffe0ed, #fff8fb);
+      color: #674354;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    nav {
+    .navbar {
+      width: min(100% - 32px, 1050px);
+      margin: 22px auto;
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #ffd1e2;
+      border-radius: 22px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 16px 7%;
-      background: white;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 2px 12px #f2cddd55;
+      gap: 15px;
+      flex-wrap: wrap;
+      box-shadow: 0 8px 30px #e68eb51c;
     }
 
     .logo {
+      color: #cf5e91;
       font-size: 19px;
-      font-weight: bold;
-      color: #df5797;
+      font-weight: 700;
     }
 
-    nav a {
+    .navbar a {
+      color: #a74474;
       text-decoration: none;
-      color: #80566d;
-      margin-left: 12px;
       font-size: 13px;
+      font-weight: 500;
+      margin-left: 12px;
     }
 
     .hero {
-      min-height: 440px;
-      padding: 75px 22px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      width: min(100% - 32px, 1050px);
+      min-height: 420px;
+      margin: 35px auto;
+      padding: 65px 25px;
       text-align: center;
-      background: linear-gradient(
-        135deg, #ffd9eb, #fff1f7, #f4e2ff
-      );
+      background: linear-gradient(145deg, #ffffff, #ffedf5);
+      border: 1px solid #f8cadd;
+      border-radius: 32px;
+      box-shadow: 0 18px 50px #d976a01c;
+      animation: fadeIn 1s ease;
     }
 
-    .flower {
-      font-size: 48px;
-      margin-bottom: 12px;
+    .hero-icon {
+      font-size: 58px;
+      animation: float 3s ease-in-out infinite;
     }
 
-    .welcome {
-      font-size: 12px;
-      letter-spacing: 3px;
-      color: #a3547c;
+    .label {
+      display: inline-block;
+      margin: 15px 0;
+      padding: 7px 17px;
+      border-radius: 30px;
+      background: #ffe0ec;
+      color: #bc4e80;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
     }
 
     h1 {
-      color: #d94d91;
-      font-size: clamp(34px, 8vw, 54px);
+      font-size: clamp(36px, 8vw, 65px);
+      color: #bd4f80;
       line-height: 1.2;
-      margin: 16px 0;
+      margin: 10px 0 18px;
     }
 
     .hero p {
-      max-width: 500px;
-      margin-bottom: 22px;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.9;
+      color: #8a697a;
+      font-size: 14px;
     }
 
     .button {
       display: inline-block;
-      background: #e76aa7;
+      margin-top: 27px;
+      padding: 13px 25px;
+      border-radius: 40px;
+      background: linear-gradient(135deg, #f29cbd, #d96398);
       color: white;
       text-decoration: none;
-      padding: 11px 23px;
-      border-radius: 30px;
-      box-shadow: 0 5px 15px #e76aa744;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 8px 20px #d9639830;
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px #d9639840;
     }
 
     section {
-      padding: 60px 8%;
-      text-align: center;
+      width: min(100% - 32px, 900px);
+      margin: 55px auto;
+      scroll-margin-top: 25px;
     }
 
     .section-title {
-      color: #d94d91;
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #a17b91;
+      text-align: center;
+      color: #bd4f80;
+      font-size: 35px;
       margin-bottom: 25px;
     }
 
     .about-card {
-      max-width: 650px;
-      margin: 25px auto 0;
-      padding: 28px;
-      background: white;
-      border: 1px solid #f6d4e5;
-      border-radius: 24px;
-      box-shadow: 0 8px 25px #e9bfd433;
-    }
-
-    .avatar {
-      width: 100px;
-      height: 100px;
-      margin: 0 auto 15px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      background: #ffe0ef;
-      font-size: 48px;
-      border: 4px solid #fff0f7;
-    }
-
-    .about-card h3 {
-      color: #d94d91;
-      font-size: 23px;
-      margin-bottom: 12px;
-    }
-
-    .biodata {
-      text-align: left;
-      margin-top: 20px;
-    }
-
-    .biodata p {
-      padding: 10px 0;
-      border-bottom: 1px dashed #f0c6dc;
-      overflow-wrap: anywhere;
-    }
-
-    .label {
-      font-weight: bold;
-      color: #c44e88;
-    }
-
-    .projects {
       display: grid;
-      grid-template-columns: repeat(
-        auto-fit, minmax(190px, 1fr)
-      );
-      gap: 18px;
-      margin-top: 25px;
-      text-align: left;
+      grid-template-columns: 0.8fr 1.4fr;
+      gap: 28px;
+      align-items: center;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #f7ccde;
+      border-radius: 28px;
+      box-shadow: 0 12px 35px #d976a018;
     }
 
-    .project-card {
-      padding: 24px;
-      background: white;
-      border: 1px solid #f6d4e5;
+    .profile {
+      min-height: 260px;
       border-radius: 22px;
-      transition: transform 0.2s;
+      background: linear-gradient(145deg, #ffd7e7, #fff0f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .emoji {
-      font-size: 36px;
-      margin-bottom: 8px;
-    }
-
-    .project-card h3 {
-      color: #d94d91;
-      margin-bottom: 8px;
-    }
-
-    .project-card p {
-      font-size: 14px;
-    }
-
-    .skills span {
-      display: inline-block;
-      background: white;
-      color: #b74780;
-      border: 1px solid #f4c7dd;
-      padding: 9px 16px;
-      border-radius: 25px;
-      margin: 5px;
-      font-size: 14px;
-    }
-
-    .dream {
-      background: linear-gradient(
-        135deg, #ffe2ef, #fff2f8
-      );
-    }
-
-    .dream-card {
-      max-width: 550px;
-      margin: auto;
-      padding: 30px 20px;
-      background: #ffffffd9;
-      border-radius: 25px;
-    }
-
-    .dream-card .emoji {
-      font-size: 52px;
-    }
-
-    .dream-card h3 {
-      color: #d94d91;
+    .profile-icon {
+      font-size: 76px;
       margin-bottom: 10px;
     }
 
-    .contact {
-      background: white;
+    .profile p {
+      color: #a74474;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .about-info h3 {
+      color: #bd4f80;
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    .about-info > p {
+      font-size: 13px;
+      line-height: 1.9;
+      color: #8a697a;
+      margin-bottom: 15px;
+    }
+
+    .bio-list {
+      list-style: none;
+    }
+
+    .bio-list li {
+      padding: 11px 0;
+      border-bottom: 1px dashed #f0c7d9;
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+
+    .bio-list li:last-child {
+      border-bottom: none;
+    }
+
+    .bio-list strong {
+      color: #b44779;
+    }
+
+    .dream-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .dream-card {
+      padding: 30px 22px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #f7ccde;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px #d976a018;
+      transition: transform 0.3s;
+    }
+
+    .dream-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .dream-icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .dream-card h3 {
+      color: #bd4f80;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .dream-card p {
+      font-size: 12px;
+      line-height: 1.9;
+      color: #8a697a;
+    }
+
+    .closing {
+      text-align: center;
+      padding: 35px 24px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #ffe0ec, #fff4f8);
+      border: 1px solid #f7ccde;
+    }
+
+    .closing h2 {
+      color: #bd4f80;
+      font-size: 29px;
+      margin-bottom: 12px;
+    }
+
+    .closing p {
+      color: #8a697a;
+      font-size: 13px;
+      line-height: 1.9;
     }
 
     footer {
+      padding: 30px 15px;
       text-align: center;
-      background: #fce4f0;
-      padding: 22px 15px;
-      font-size: 13px;
+      color: #a46d86;
+      font-size: 12px;
     }
 
-    @media (max-width: 380px) {
-      nav {
-        padding: 12px;
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        padding: 14px 16px;
       }
 
-      .logo {
-        font-size: 16px;
+      .navbar a {
+        margin-left: 0;
+        margin-right: 8px;
       }
 
-      nav a {
-        margin-left: 5px;
-        font-size: 11px;
-      }
-
-      section {
-        padding: 45px 6%;
+      .hero {
+        padding: 45px 20px;
+        min-height: auto;
       }
 
       .about-card {
+        grid-template-columns: 1fr;
         padding: 20px;
+      }
+
+      .profile {
+        min-height: 180px;
+      }
+
+      .dream-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
       }
     }
   </style>
@@ -260,183 +335,108 @@
 
 <body>
 
-  <nav>
-    <div class="logo">🎀 Bilqis's Diary</div>
+  <nav class="navbar">
+    <div class="logo">♡ Bilqis Aulia</div>
     <div>
-      <a href="#about">Profil</a>
-      <a href="#projects">Proyek</a>
-      <a href="#dream">Cita-cita</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#dream">My Dreams</a>
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="flower">🌷 🧸 💗</div>
-    <div class="welcome">WELCOME TO MY PORTFOLIO</div>
+  <main>
+    <header class="hero" id="home">
+      <div class="hero-icon">🌸</div>
+      <div class="label">WELCOME TO MY PORTFOLIO</div>
 
-    <h1>Hai, aku Bilqis Aulia!</h1>
-
-    <p>
-      Selamat datang di website portofolioku.
-      Aku seorang pelajar yang suka bermain game,
-      belajar hal baru, dan memiliki mimpi besar
-      untuk masa depan. ✨
-    </p>
-
-    <a class="button" href="#about">
-      Kenalan Yuk! 💌
-    </a>
-  </header>
-
-  <section id="about">
-    <h2 class="section-title">About Me 🌸</h2>
-
-    <p class="subtitle">
-      Sedikit cerita tentang diriku
-    </p>
-
-    <div class="about-card">
-      <div class="avatar">🎀</div>
-
-      <h3>Bilqis Aulia</h3>
+      <h1>Hi, I'm Bilqis! ♡</h1>
 
       <p>
-        Halo semuanya! Aku Bilqis Aulia,
-        seorang pelajar yang sedang belajar
-        dan mengembangkan kemampuan diri.
-        Aku percaya bahwa setiap langkah kecil
-        bisa membawa kita menuju impian.
+        Halo semuanya! Selamat datang di website
+        portofolio pribadiku. Di sini kamu bisa mengenal
+        diriku, hobiku, dan cita-cita yang ingin aku
+        wujudkan di masa depan.
       </p>
 
-      <div class="biodata">
-        <p>
-          <span class="label">👩 Nama:</span>
-          Bilqis Aulia
-        </p>
+      <a href="#about" class="button">Kenali Aku ✨</a>
+    </header>
 
-        <p>
-          <span class="label">🏫 Sekolah:</span>
-          SMKN 2 SURAKARTA
-        </p>
+    <section id="about">
+      <h2 class="section-title">About Me ♡</h2>
 
-        <p>
-          <span class="label">📚 Kelas/Jurusan:</span>
-          XI PPLG A
-        </p>
+      <div class="about-card">
+        <div class="profile">
+          <div class="profile-icon">🎀</div>
+          <p>A little dreamer with big dreams</p>
+        </div>
 
-        <p>
-          <span class="label">🎮 Hobi:</span>
-          Bermain game
-        </p>
+        <div class="about-info">
+          <h3>It's Me, Bilqis!</h3>
 
+          <p>
+            Aku adalah siswi yang senang belajar,
+            mencoba hal baru, dan memiliki impian besar.
+            Aku percaya bahwa setiap langkah kecil
+            bisa membawaku menuju masa depan yang hebat.
+          </p>
+
+          <ul class="bio-list">
+            <li>🌷 <strong>Nama:</strong> Bilqis Aulia</li>
+            <li>🏫 <strong>Sekolah:</strong> SMKN 2 SURAKARTA</li>
+            <li>📚 <strong>Kelas:</strong> XI PPLG A</li>
+            <li>🍳 <strong>Hobi:</strong> Masak</li>
+            <li>💖 <strong>Motto:</strong> Berani bermimpi, berusaha, dan berkembang.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="dream">
+      <h2 class="section-title">My Big Dreams ✨</h2>
+
+      <div class="dream-grid">
+        <div class="dream-card">
+          <div class="dream-icon">👩🏻‍💼</div>
+          <h3>Menjadi CEO</h3>
+          <p>
+            Aku ingin menjadi CEO yang sukses,
+            mampu memimpin perusahaan dengan baik,
+            menciptakan ide-ide kreatif, dan memberikan
+            dampak positif bagi banyak orang.
+          </p>
+        </div>
+
+        <div class="dream-card">
+          <div class="dream-icon">✈️</div>
+          <h3>Menjadi Pramugari</h3>
+          <p>
+            Aku juga bercita-cita menjadi pramugari,
+            menjelajahi berbagai tempat, bertemu orang
+            baru, serta memberikan pelayanan terbaik
+            dengan ramah dan profesional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="closing">
+        <h2>Dream Big, Shine Bright! 🌷</h2>
         <p>
-          <span class="label">✈️ Cita-cita:</span>
-          Pramugari
+          Aku percaya bahwa masa depan yang indah
+          dimulai dari keberanian untuk bermimpi
+          dan kemauan untuk terus berusaha.
+          <br>
+          This is my journey. Thank you for visiting! ♡
         </p>
       </div>
-    </div>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">My Projects 💌</h2>
-
-    <p class="subtitle">
-      Perjalanan belajar dan kreativitas
-    </p>
-
-    <div class="projects">
-      <div class="project-card">
-        <div class="emoji">💻</div>
-        <h3>Website Portfolio</h3>
-        <p>
-          Membuat website portofolio pribadi
-          dengan HTML dan CSS sebagai proyek
-          belajar di sekolah.
-        </p>
-      </div>
-
-      <div class="project-card">
-        <div class="emoji">🎨</div>
-        <h3>Creative Design</h3>
-        <p>
-          Mengeksplorasi perpaduan warna pink,
-          desain yang manis, dan tampilan
-          website yang menarik.
-        </p>
-      </div>
-
-      <div class="project-card">
-        <div class="emoji">📖</div>
-        <h3>School Journey</h3>
-        <p>
-          Terus belajar, mencoba hal baru,
-          dan mengembangkan keterampilan
-          selama bersekolah.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2 class="section-title">My Interests ✨</h2>
-
-    <p class="subtitle">
-      Hal-hal yang aku sukai
-    </p>
-
-    <div class="skills">
-      <span>🎮 Bermain Game</span>
-      <span>💻 Teknologi</span>
-      <span>🎀 Pink Aesthetic</span>
-      <span>🌷 Belajar Hal Baru</span>
-    </div>
-  </section>
-
-  <section id="dream" class="dream">
-    <h2 class="section-title">My Big Dream ✈️</h2>
-
-    <p class="subtitle">
-      Impian yang ingin aku wujudkan
-    </p>
-
-    <div class="dream-card">
-      <div class="emoji">✈️ ☁️ 🌸</div>
-
-      <h3>Menjadi Pramugari</h3>
-
-      <p>
-        Aku bercita-cita menjadi pramugari.
-        Aku ingin terus belajar, meningkatkan
-        kemampuan komunikasi, dan mempersiapkan
-        diri agar suatu hari bisa meraih impianku.
-        Semangat untuk masa depan! 💗
-      </p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2 class="section-title">Thank You! 💗</h2>
-
-    <p>
-      Terima kasih sudah mengunjungi portofolioku.
-    </p>
-
-    <p>
-      Semoga aku bisa terus belajar dan
-      berkembang setiap hari. 🌷
-    </p>
-
-    <br>
-
-    <a class="button" href="#top"
-       onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-      Kembali ke Atas ↑
-    </a>
-  </section>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Bilqis Aulia</p>
-    <p>Made with ♡ and lots of pink 🎀</p>
-    <p>Portofolio Tugas Sekolah · XI PPLG A</p>
+    Made with ♡ by Bilqis Aulia
+    <br>
+    © 2026 My Pink Portfolio
   </footer>
 
 </body>
